@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         // Create a layer mask for the floor layer.
-        floorMask = LayerMask.GetMask("Floor");
+        floorMask = LayerMask.GetMask("Environment");
 
         // Set up references.
         anim = GetComponent<Animator>();
@@ -77,9 +77,9 @@ public class PlayerMovement : MonoBehaviour
     void Animating(float h, float v)
     {
         // Create a boolean that is true if either of the input axes is non-zero.
-        bool walking = h != 0f || v != 0f;
+        bool moving = h != 0f || v != 0f;
 
         // Tell the animator whether or not the player is walking.
-        anim.SetBool("IsWalking", walking);
+        anim.SetBool("IsMoving", moving);
     }
 }
