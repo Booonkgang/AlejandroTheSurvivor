@@ -3,23 +3,20 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;            // The position that that camera will be following.
-    public float smoothing = 5f;        // The speed with which the camera will be following.
+	public float smoothTime = 1f;		// a public variable to adjust smoothing of camera motion
+    public float maxSpeed = 50f;        //max speed camera can move
+    public Transform desiredPose;           // the desired pose for the camera, specified by a transform in the game
 
-    Vector3 offset;                     // The initial offset from the target.
+    protected Vector3 currentPositionCorrectionVelocity;
+    protected Vector3 currentFacingCorrectionVelocity;
 
-    void Start()
+    void LateUpdate()
     {
-        // Calculate the initial offset.
-        offset = transform.position - target.position;
-    }
 
-    void FixedUpdate()
-    {
-        // Create a postion the camera is aiming for based on the offset from the target.
-        Vector3 targetCamPos = target.position + offset;
-
-        // Smoothly interpolate between the camera's current position and it's target position.
-        transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+        if (desiredPose != null)
+        {
+            transform.position = Vector3.SmoothDamp(transform.position, desiredPose.position, ref currentPositionCorrectionVelocity, smoothTime, maxSpeed, Time.deltaTime);
+            transform.forward = Vector3.SmoothDamp(transform.forward, desiredPose.forward, ref currentFacingCorrectionVelocity, smoothTime, maxSpeed, Time.deltaTime);
+        }
     }
 }

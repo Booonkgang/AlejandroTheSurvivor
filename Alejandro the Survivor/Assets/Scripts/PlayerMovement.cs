@@ -82,4 +82,16 @@ public class PlayerMovement : MonoBehaviour
         // Tell the animator whether or not the player is walking.
         anim.SetBool("IsMoving", moving);
     }
+
+    void OnAnimatorMove()
+    {
+        Animator animator = GetComponent<Animator>();
+
+        if (animator)
+        {
+            Vector3 newPosition = transform.position;
+            newPosition.z += animator.GetFloat("Root") * Time.deltaTime;
+            transform.position = newPosition;
+        }
+    }
 }

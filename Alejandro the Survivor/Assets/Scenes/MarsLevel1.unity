@@ -5465,8 +5465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93eec59a8db437543a346584ed3c9c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1927321567}
-  smoothing: 5
+  smoothTime: 1
+  maxSpeed: 50
+  desiredPose: {fileID: 1927321567}
 --- !u!81 &1617044124
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6593,7 +6594,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4427613559659150, guid: e7965cb5f3b6b49439772edd4131b2b0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 4427613559659150, guid: e7965cb5f3b6b49439772edd4131b2b0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6788,6 +6789,15 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 95096058574463750, guid: e7965cb5f3b6b49439772edd4131b2b0,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112338128624330, guid: e7965cb5f3b6b49439772edd4131b2b0, type: 2}
+      propertyPath: m_Name
+      value: AstronautPlayer
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 111744052045278198, guid: e7965cb5f3b6b49439772edd4131b2b0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: e7965cb5f3b6b49439772edd4131b2b0, type: 2}
@@ -6814,7 +6824,7 @@ CapsuleCollider:
   m_Radius: 0.15
   m_Height: 0.4
   m_Direction: 1
-  m_Center: {x: 0, y: 0.17, z: 0}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &1927321570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6823,10 +6833,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1927321568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6bdca3e86a69848b722632f364f5e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d51b9bc335ef9a4e86ffb06fcb80af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  Name: Alejandro
+  InputMapToCircular: 1
+  forwardInputFilter: 5
+  turnInputFilter: 5
 --- !u!54 &1927321571
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6842,6 +6855,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &1927321572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1927321568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9d6a226dca6f1489ac407c416e2ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSpeed: 1.5
+  rootMovementSpeed: 1.07
+  rootTurnSpeed: 1.1
 --- !u!1001 &1929913153
 Prefab:
   m_ObjectHideFlags: 0
