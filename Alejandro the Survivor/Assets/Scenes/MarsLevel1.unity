@@ -6885,8 +6885,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9d6a226dca6f1489ac407c416e2ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 1.35
-  rootMovementSpeed: 1.15
+  animationSpeed: 1.455
+  rootMovementSpeed: 0.9
   rootTurnSpeed: 1.25
 --- !u!1001 &1929913153
 Prefab:
