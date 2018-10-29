@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameMenuScene.unity
     guid: 875267da4d24245e9b8fd822d5093606
+  - enabled: 1
+    path: Assets/Scenes/MarsLevel1.unity
+    guid: 39072eed431ec5a44ae15621c67582ed
   m_configObjects: {}
