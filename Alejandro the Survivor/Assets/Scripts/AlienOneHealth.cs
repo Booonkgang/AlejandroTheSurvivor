@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class AlienOneHealth : MonoBehaviour {
 
-	public int startingHealth = 20;
+    public int startingHealth = 20;
     public int currentHealth;
 
     Animator anim;
     ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
-		AlienShooting alienShooting;
+        AlienShooting alienShooting;
     bool isDead;
 
 
@@ -21,7 +21,7 @@ public class AlienOneHealth : MonoBehaviour {
         hitParticles = GetComponentInChildren <ParticleSystem> ();
         capsuleCollider = GetComponent <CapsuleCollider> ();
 
-				alienShooting = GetComponentInChildren <AlienShooting> ();
+                alienShooting = GetComponentInChildren <AlienShooting> ();
 
         currentHealth = startingHealth;
     }
@@ -55,7 +55,7 @@ public class AlienOneHealth : MonoBehaviour {
     {
         isDead = true;
 
-				alienShooting.DisableEffects();
+                alienShooting.DisableEffects();
 
         capsuleCollider.isTrigger = true;
 

@@ -67,6 +67,12 @@ public class PlayerShooting : MonoBehaviour {
 					{
 							alienHealth.TakeDamage (damagePerShot, shootHit.point);
 					}
+
+					ShortAlienHealth shortHealth = shootHit.collider.GetComponent<ShortAlienHealth>();
+					if(shortHealth != null)
+					{
+						shortHealth.TakeDamage(damagePerShot, shootHit.point);
+					}
 					gunLine.SetPosition (1, shootHit.point);
 			}
 			else
