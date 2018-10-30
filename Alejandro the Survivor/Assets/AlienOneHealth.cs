@@ -60,6 +60,7 @@ public class AlienOneHealth : MonoBehaviour {
         capsuleCollider.isTrigger = true;
 
         anim.SetTrigger ("Die");
+        StartSinking();
     }
 
 

@@ -69,6 +69,7 @@ public class AlienShooting : MonoBehaviour {
 	void Shoot ()
 	{
 			timer = 0f;
+			anim.SetTrigger("Shoot");
 
 			gunParticles.Stop ();
 			gunParticles.Play ();
