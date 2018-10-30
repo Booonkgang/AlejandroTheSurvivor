@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AlienOneHealth : MonoBehaviour {
 
-		public int startingHealth = 20;
+	public int startingHealth = 20;
     public int currentHealth;
 
     Animator anim;
@@ -41,8 +41,8 @@ public class AlienOneHealth : MonoBehaviour {
 
         currentHealth -= amount;
 
-        hitParticles.transform.position = hitPoint;
-        hitParticles.Play();
+        //hitParticles.transform.position = hitPoint;
+        //hitParticles.Play();
 
         if(currentHealth <= 0)
         {

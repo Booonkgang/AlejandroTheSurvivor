@@ -24,6 +24,7 @@ public class AlienMovement : MonoBehaviour {
 			if(alienHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
 			{
 					nav.SetDestination (astronautPlayer.position);
+					transform.LookAt(astronautPlayer);
 			}
 			else
 			{

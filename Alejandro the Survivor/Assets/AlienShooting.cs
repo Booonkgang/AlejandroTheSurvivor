@@ -18,8 +18,9 @@ public class AlienShooting : MonoBehaviour {
 	int shootableMask;
 	ParticleSystem gunParticles;
 	LineRenderer gunLine;
-	AlienOneHealth alienHealth;
+	public GameObject alien_obj;
 	float effectsDisplayTime = 0.2f;
+	AlienOneHealth alienHealth;
 
 
 	void Awake ()
@@ -30,7 +31,7 @@ public class AlienShooting : MonoBehaviour {
 			gunParticles = GetComponent<ParticleSystem> ();
 			gunLine = GetComponent <LineRenderer> ();
 			astronautPlayer = GameObject.FindGameObjectWithTag ("AstronautPlayer");
-			alienHealth = GetComponent <AlienOneHealth>();
+			alienHealth = (AlienOneHealth) alien_obj.GetComponent(typeof(AlienOneHealth));
 	}
 
 
@@ -43,7 +44,7 @@ public class AlienShooting : MonoBehaviour {
 			if(Vector3.Distance(transform.position, astronautPlayer.transform.position) <= 30.0f && timer >= timeBetweenBullets)
 			{
 				if(alienHealth.currentHealth <= 0)
-        {
+        	{
 					DisableEffects();
 				} else {
 					Shoot ();

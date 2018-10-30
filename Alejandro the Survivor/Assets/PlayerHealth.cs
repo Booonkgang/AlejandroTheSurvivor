@@ -43,10 +43,10 @@ public class PlayerHealth : MonoBehaviour {
 
 				currentHealth -= amount;
 
-				healthSlider.value = currentHealth;
+				//healthSlider.value = currentHealth;
 
-				hitParticles.transform.position = hitPoint;
-				hitParticles.Play();
+//				hitParticles.transform.position = hitPoint;
+//				hitParticles.Play();
 
 				if(currentHealth <= 0)
 				{
