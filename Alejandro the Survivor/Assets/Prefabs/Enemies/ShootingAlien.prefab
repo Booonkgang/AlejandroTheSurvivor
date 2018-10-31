@@ -1876,8 +1876,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerShot: 5
-  timeBetweenBullets: 0.15
-  range: 100
+  timeBetweenBullets: 0.6
+  range: 50
   alien_obj: {fileID: 1852123560111392}
 --- !u!120 &120989166256295184
 LineRenderer:
