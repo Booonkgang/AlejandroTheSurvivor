@@ -5,11 +5,12 @@ using UnityEngine;
 public class PartTrigger : MonoBehaviour {
 
     public bool partTrigger = false;
+    Animator anim;
 
     // Use this for initialization
     void Start()
     {
-
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -21,5 +22,6 @@ public class PartTrigger : MonoBehaviour {
     public void triggerPart()
     {
         partTrigger = true;
+        anim.SetInteger("parts", anim.GetInteger("parts") + 1);
     }
 }

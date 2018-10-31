@@ -18,6 +18,7 @@ public class ShipPartTrigger : MonoBehaviour {
         PartTrigger ct = other.attachedRigidbody.gameObject.GetComponent<PartTrigger>();
         if (ct != null)
         {
+            ct.triggerPart();
             anim.SetBool("hasCollider", true);
             lightSource.enabled = true;
         }
