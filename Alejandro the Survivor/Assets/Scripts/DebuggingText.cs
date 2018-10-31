@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +16,6 @@ public class DebuggingText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = "Enemy Left: " + (HUDControl.totalEnemyAmount - HUDControl.currEnemyAmount);
+		text.text = "Enemy Eliminated: " + HUDControl.currEnemyAmount;
 	}
 }
