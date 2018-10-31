@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 
 public class HUDControl : MonoBehaviour {
-	// public PlayerStatus playerStatus;
+    public Slider hpSilder;
+	public PlayerHealth playerHealth;
 	public float restart = 10f;
 	public static uint currEnemyAmount;
 	public Text GameComplete;
@@ -32,11 +33,12 @@ public class HUDControl : MonoBehaviour {
 		endFlag = false;
 		currTimer = 0;
 		delayTimer = 0;
-		player = GameObject.FindGameObjectWithTag ("Player");
+		player = GameObject.FindGameObjectWithTag ("AstronautPlayer")
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        hpSilder.value = playerHealth.currentHealth;
 		if (startFlag) {	// Help message when scene start
 			var temp = GameStart.color;
 			temp.a = 1f;
@@ -54,7 +56,7 @@ public class HUDControl : MonoBehaviour {
 				currTimer = 0;
 				startFlag = false;
 			}
-		} else if (player.currHp <= 0) {	// Game Over message control
+		} else if (playerHealth.currentHealth <= 0) {	// Game Over message control
 			anim.SetTrigger ("GameOver");
 		
 			currTimer += Time.deltaTime;
@@ -89,10 +91,8 @@ public class HUDControl : MonoBehaviour {
 		} else if (sceneName == "Level2") {
 			SceneManager.LoadScene ("Level3");
 		} else if (sceneName == "Level3") {
-//			UnityEngine.Object.Destroy (GameObject.Find("BluetoothContainer"));
-//			UnityEngine.Object.Destroy (GameObject.Find("BluetoothLEReceiver"));
-			SceneManager.LoadScene ("Level1");
-//			Application.Quit();
+			//SceneManager.LoadScene ("Level1");
+			Application.Quit();
 		} else {
 			
 		}
