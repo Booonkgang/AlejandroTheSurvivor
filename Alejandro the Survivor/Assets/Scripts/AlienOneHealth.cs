@@ -7,6 +7,7 @@ public class AlienOneHealth : MonoBehaviour {
     public int startingHealth = 20;
     public int currentHealth;
 
+    PowerUpManager powerUpManager;
     Animator anim;
     ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
@@ -16,6 +17,8 @@ public class AlienOneHealth : MonoBehaviour {
 
     void Awake ()
     {
+        GameObject managerObj = GameObject.FindGameObjectWithTag("PowerUpManager");
+        powerUpManager = managerObj.GetComponent<PowerUpManager>();
         anim = GetComponent <Animator> ();
 
         hitParticles = GetComponentInChildren <ParticleSystem> ();
@@ -54,11 +57,12 @@ public class AlienOneHealth : MonoBehaviour {
     void Death ()
     {
         isDead = true;
-
         alienShooting.DisableEffects();
-
+        if (Random.value > (1 - powerUpManager.spawnChance))
+        {
+            powerUpManager.spawnPowerUp(this.transform.position);
+        }
         capsuleCollider.isTrigger = true;
-        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         anim.SetTrigger ("Die");
         StartSinking();
     }
@@ -68,6 +72,7 @@ public class AlienOneHealth : MonoBehaviour {
     {
         GetComponent <UnityEngine.AI.NavMeshAgent> ().enabled = false;
         GetComponent <Rigidbody> ().isKinematic = true;
+
         Destroy (gameObject, 2f);
     }
 }

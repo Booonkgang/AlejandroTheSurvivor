@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 22560402}
   m_Layer: 17
   m_Name: PowerUpManager
-  m_TagString: Untagged
+  m_TagString: PowerUpManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,6 +269,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGun: {fileID: 1187985887}
+  powerUps:
+  - {fileID: 1920792994292104, guid: 787c8b559b6966a4e8df039cc96c5b64, type: 2}
+  - {fileID: 1797993691815036, guid: 515acf139eea9fb49bce30012d04a8fc, type: 2}
+  spawnChance: 0.5
 --- !u!1001 &50627772
 Prefab:
   m_ObjectHideFlags: 0
@@ -13484,7 +13488,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4583675197052642, guid: 993d1391c22c39f41b292a532ea396a5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: 4583675197052642, guid: 993d1391c22c39f41b292a532ea396a5, type: 2}
       propertyPath: m_LocalPosition.y
@@ -13513,10 +13517,6 @@ Prefab:
     - target: {fileID: 4583675197052642, guid: 993d1391c22c39f41b292a532ea396a5, type: 2}
       propertyPath: m_RootOrder
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677522826215784, guid: 993d1391c22c39f41b292a532ea396a5, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 993d1391c22c39f41b292a532ea396a5, type: 2}

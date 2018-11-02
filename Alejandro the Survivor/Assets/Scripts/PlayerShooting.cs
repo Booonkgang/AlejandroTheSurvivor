@@ -46,6 +46,13 @@ public class PlayerShooting : MonoBehaviour {
 			gunLine.enabled = false;
 	}
 
+    public void powerUp(int damage, float fireRate, float range)
+    {
+        this.damagePerShot += damage;
+        this.timeBetweenBullets = timeBetweenBullets - timeBetweenBullets * fireRate;
+        this.range += range;
+    }
+
 
 	void Shoot ()
 	{

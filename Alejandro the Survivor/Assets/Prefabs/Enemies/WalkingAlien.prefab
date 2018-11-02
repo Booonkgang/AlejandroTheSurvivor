@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 114122389454319910}
   m_Layer: 17
   m_Name: WalkingAlien
-  m_TagString: Alien
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1254,7 +1254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1677522826215784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.06, z: -4.79}
+  m_LocalPosition: {x: 2.05, y: 0.06, z: -4.79}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4040737268254418}

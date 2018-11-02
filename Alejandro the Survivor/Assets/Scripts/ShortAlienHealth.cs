@@ -15,6 +15,7 @@ public class ShortAlienHealth : MonoBehaviour {
     CapsuleCollider capsuleCollider;
     BoxCollider boxCollider;
     GameObject astronautPlayer;
+    PowerUpManager powerUpManager;
     bool playerInRange;
     float timer;
 
@@ -22,6 +23,8 @@ public class ShortAlienHealth : MonoBehaviour {
     {
         anim = GetComponent <Animator> ();
 
+        GameObject managerObj = GameObject.FindGameObjectWithTag("PowerUpManager");
+        powerUpManager = managerObj.GetComponent<PowerUpManager>();
         //hitParticles = GetComponentInChildren <ParticleSystem> ();
         capsuleCollider = GetComponent <CapsuleCollider> ();
         boxCollider = GetComponent<BoxCollider>();
@@ -87,10 +90,14 @@ public class ShortAlienHealth : MonoBehaviour {
 
     void Death ()
     {
+
+        //alienShooting.DisableEffects();
+
         isDead = true;
-
-		//alienShooting.DisableEffects();
-
+        if (Random.value > (1 - powerUpManager.spawnChance))
+        {
+            powerUpManager.spawnPowerUp(this.transform.position);
+        }
         capsuleCollider.isTrigger = true;
 
         anim.SetTrigger ("Dead");
