@@ -55,10 +55,10 @@ public class AlienOneHealth : MonoBehaviour {
     {
         isDead = true;
 
-                alienShooting.DisableEffects();
+        alienShooting.DisableEffects();
 
         capsuleCollider.isTrigger = true;
-
+        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         anim.SetTrigger ("Die");
         StartSinking();
     }

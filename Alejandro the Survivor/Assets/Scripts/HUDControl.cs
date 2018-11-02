@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class HUDControl : MonoBehaviour {
     public Slider hpSilder;
+    public Text healthText;
 	public float restart = 10f;
 	public static uint currEnemyAmount;
 	public Text GameComplete;
@@ -40,7 +41,8 @@ public class HUDControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         hpSilder.value = playerHealth.currentHealth;
-		if (startFlag) {	// Help message when scene start
+        healthText.text = "" + playerHealth.currentHealth;
+        if (startFlag) {	// Help message when scene start
 			var temp = GameStart.color;
 			temp.a = 1f;
 			GameStart.color = temp;
@@ -65,7 +67,7 @@ public class HUDControl : MonoBehaviour {
 			if (currTimer >= restart) {
 				SceneManager.LoadScene ("GameMenuScene");
 			}
-		} else if (currEnemyAmount >= totalEnemyAmount || anim.GetInteger("parts") >= 3) {	// Scene complete message control
+		} else if (currEnemyAmount >= totalEnemyAmount || player.GetComponent<Animator>().GetInteger("parts") >= 3) {	// Scene complete message control
 			var temp = GameComplete.color;
 			temp.a = 1f;
 			GameComplete.color = temp;
