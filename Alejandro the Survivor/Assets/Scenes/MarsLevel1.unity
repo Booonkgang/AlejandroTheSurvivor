@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0789ab2b3fdac0f4989cd891a42c01a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 428404741}
+  enemy: {fileID: 1677522826215784, guid: 993d1391c22c39f41b292a532ea396a5, type: 2}
   spawnTime: 8
   spawnPoints:
   - {fileID: 822746194}
@@ -1451,7 +1451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0789ab2b3fdac0f4989cd891a42c01a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1830116432}
+  enemy: {fileID: 1852123560111392, guid: 55607f4755125f84bb5339f61d632903, type: 2}
   spawnTime: 12
   spawnPoints:
   - {fileID: 541932868}
@@ -1983,11 +1983,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4646933745565138, guid: 4983f395b2610de4e9f688a87bbd9af9,
     type: 2}
   m_PrefabInternal: {fileID: 425935517}
---- !u!1 &428404741 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1677522826215784, guid: 993d1391c22c39f41b292a532ea396a5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1851697799}
 --- !u!1 &454494046
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,7 +3516,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -13720,7 +13715,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4427613559659150, guid: e7965cb5f3b6b49439772edd4131b2b0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 3.6
+      value: 6.85
       objectReference: {fileID: 0}
     - target: {fileID: 4427613559659150, guid: e7965cb5f3b6b49439772edd4131b2b0, type: 2}
       propertyPath: m_LocalRotation.x

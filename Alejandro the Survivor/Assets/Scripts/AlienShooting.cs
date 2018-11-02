@@ -37,7 +37,7 @@ public class AlienShooting : MonoBehaviour {
 
 	void Update ()
 	{
-			anim.SetTrigger("GunUp");
+			
 
 			timer += Time.deltaTime;
 
@@ -47,7 +47,8 @@ public class AlienShooting : MonoBehaviour {
         	{
 					DisableEffects();
 				} else {
-					Shoot ();
+                anim.SetTrigger("GunUp");
+                Shoot ();
 				}
 
 			}
