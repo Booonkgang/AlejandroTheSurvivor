@@ -47,8 +47,11 @@ public class AlienShooting : MonoBehaviour {
         	{
 					DisableEffects();
 				} else {
-                anim.SetTrigger("GunUp");
-                Shoot ();
+                    if (anim != null)
+                        {
+                            anim.SetTrigger("GunUp");
+                            Shoot();
+                        }
 				}
 
 			}
