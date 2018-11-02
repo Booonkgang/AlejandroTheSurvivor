@@ -12,6 +12,8 @@ public class RootMotionPlayerMovement : MonoBehaviour
 
     private Transform leftFoot;
     private Transform rightFoot;
+    private float camRayLength = 100f;
+    private int floorMask;
 
     public float animationSpeed = 1f;
     public float rootMovementSpeed = 1f;
@@ -19,7 +21,7 @@ public class RootMotionPlayerMovement : MonoBehaviour
 
     void Awake()
     {
-
+        floorMask = LayerMask.GetMask("Environment");
         anim = GetComponent<Animator>();
 
         if (anim == null)
@@ -76,7 +78,18 @@ public class RootMotionPlayerMovement : MonoBehaviour
 
         //TODO Here, you could scale the difference in position and rotation to make the character go faster or slower
         this.transform.position = Vector3.LerpUnclamped(this.transform.position, newRootPosition, rootMovementSpeed);
-        this.transform.rotation = Quaternion.LerpUnclamped(this.transform.rotation, newRootRotation, rootTurnSpeed);
+        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit floorHit;
+        Quaternion newRotation;
+        if (Physics.Raycast (camRay, out floorHit, camRayLength, floorMask))
+        {
+            Vector3 playerToMouse = floorHit.point - transform.position;
+            playerToMouse.y = 0f;
+            newRotation = Quaternion.LookRotation(playerToMouse);
+
+            this.transform.rotation = Quaternion.LerpUnclamped(this.transform.rotation, Quaternion.SlerpUnclamped(newRootRotation, newRotation, rootTurnSpeed), rootTurnSpeed);
+        }
+        
       
     }
 }
