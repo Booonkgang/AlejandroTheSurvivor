@@ -61,7 +61,21 @@ public class RootMotionPlayerMovement : MonoBehaviour
             inputTurn = cinput.Turn;
         }
 
-        anim.SetFloat("velx", inputTurn);
+        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit floorHit;
+        Quaternion newRotation;
+        if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
+        {
+            Vector3 playerToMouse = floorHit.point - transform.position;
+            playerToMouse.y = 0f;
+            newRotation = Quaternion.LookRotation(playerToMouse);
+
+            anim.SetFloat("velx", newRotation.w / 2);
+        } else
+        {
+            anim.SetFloat("velx", inputTurn);
+        }
+        
         anim.SetFloat("vely", inputForward);
         
     }
@@ -75,8 +89,7 @@ public class RootMotionPlayerMovement : MonoBehaviour
 
         newRootPosition = anim.rootPosition;
         newRootRotation = anim.rootRotation;
-
-        //TODO Here, you could scale the difference in position and rotation to make the character go faster or slower
+        
         this.transform.position = Vector3.LerpUnclamped(this.transform.position, newRootPosition, rootMovementSpeed);
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit floorHit;
