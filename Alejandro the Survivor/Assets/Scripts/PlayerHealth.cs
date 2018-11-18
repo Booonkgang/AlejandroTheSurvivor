@@ -74,6 +74,14 @@ public class PlayerHealth : MonoBehaviour {
         healthText.text = "" + currentHealth;
     }
 
+    public void IncreaseMaxHealth(int amount)
+    {
+        maxHealth += amount;
+        currentHealth += amount;
+        healthSlider.value = currentHealth;
+        healthText.text = "" + currentHealth;
+    }
+
 
     void Death ()
     {
