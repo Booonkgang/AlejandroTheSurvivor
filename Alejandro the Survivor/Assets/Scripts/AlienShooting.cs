@@ -21,6 +21,7 @@ public class AlienShooting : MonoBehaviour {
 	public GameObject alien_obj;
 	float effectsDisplayTime = 0.2f;
 	AlienOneHealth alienHealth;
+	AudioSource gunAudio;
 
 
 	void Awake ()
@@ -32,6 +33,7 @@ public class AlienShooting : MonoBehaviour {
 			gunLine = GetComponent <LineRenderer> ();
 			astronautPlayer = GameObject.FindGameObjectWithTag ("AstronautPlayer");
 			alienHealth = (AlienOneHealth) alien_obj.GetComponent(typeof(AlienOneHealth));
+			gunAudio = GetComponent<AudioSource> ();
 	}
 
 
@@ -70,6 +72,8 @@ public class AlienShooting : MonoBehaviour {
 	{
 			timer = 0f;
 			anim.SetTrigger("Shoot");
+
+			gunAudio.Play ();
 
 			gunParticles.Stop ();
 			gunParticles.Play ();

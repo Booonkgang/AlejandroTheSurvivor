@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ShortAlienHealth : MonoBehaviour {
 
-	public int startingHealth = 50;
+		public int startingHealth = 50;
     public int currentHealth;
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 10;
+		public AudioClip deathClip;
 
     Animator anim;
     private bool isDead;
@@ -15,6 +16,7 @@ public class ShortAlienHealth : MonoBehaviour {
     CapsuleCollider capsuleCollider;
     BoxCollider boxCollider;
     GameObject astronautPlayer;
+		AudioSource playerAudio;
     bool playerInRange;
     float timer;
 
@@ -26,6 +28,8 @@ public class ShortAlienHealth : MonoBehaviour {
         capsuleCollider = GetComponent <CapsuleCollider> ();
         boxCollider = GetComponent<BoxCollider>();
         astronautPlayer = GameObject.FindGameObjectWithTag ("AstronautPlayer");
+
+				playerAudio = GetComponent <AudioSource> ();
 		//		alienShooting = GetComponentInChildren <AlienShooting> ();
 
         currentHealth = startingHealth;
@@ -66,6 +70,8 @@ public class ShortAlienHealth : MonoBehaviour {
 
         currentHealth -= amount;
 
+				playerAudio.Play ();
+
         //hitParticles.transform.position = hitPoint;
         //hitParticles.Play();
 
@@ -90,6 +96,9 @@ public class ShortAlienHealth : MonoBehaviour {
         isDead = true;
 
 		//alienShooting.DisableEffects();
+
+				playerAudio.clip = deathClip;
+				playerAudio.Play ();
 
         capsuleCollider.isTrigger = true;
 

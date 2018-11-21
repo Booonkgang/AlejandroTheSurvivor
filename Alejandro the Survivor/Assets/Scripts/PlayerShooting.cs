@@ -14,6 +14,7 @@ public class PlayerShooting : MonoBehaviour {
 	int shootableMask;
 	ParticleSystem gunParticles;
 	LineRenderer gunLine;
+	AudioSource gunAudio;
 	float effectsDisplayTime = 0.2f;
 
 
@@ -22,6 +23,7 @@ public class PlayerShooting : MonoBehaviour {
 			shootableMask = LayerMask.GetMask ("Shootable");
 			gunParticles = GetComponent<ParticleSystem> ();
 			gunLine = GetComponent <LineRenderer> ();
+			gunAudio = GetComponent<AudioSource> ();
 	}
 
 
@@ -50,6 +52,8 @@ public class PlayerShooting : MonoBehaviour {
 	void Shoot ()
 	{
 			timer = 0f;
+
+			gunAudio.Play ();
 
 			gunParticles.Stop ();
 			gunParticles.Play ();

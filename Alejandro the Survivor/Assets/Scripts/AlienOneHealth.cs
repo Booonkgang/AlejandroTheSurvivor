@@ -6,11 +6,13 @@ public class AlienOneHealth : MonoBehaviour {
 
     public int startingHealth = 20;
     public int currentHealth;
+    public AudioClip deathClip;
 
     Animator anim;
+    AudioSource playerAudio;
     ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
-        AlienShooting alienShooting;
+    AlienShooting alienShooting;
     bool isDead;
 
 
@@ -21,7 +23,9 @@ public class AlienOneHealth : MonoBehaviour {
         hitParticles = GetComponentInChildren <ParticleSystem> ();
         capsuleCollider = GetComponent <CapsuleCollider> ();
 
-                alienShooting = GetComponentInChildren <AlienShooting> ();
+        playerAudio = GetComponent <AudioSource> ();
+
+        alienShooting = GetComponentInChildren <AlienShooting> ();
 
         currentHealth = startingHealth;
     }
@@ -41,6 +45,8 @@ public class AlienOneHealth : MonoBehaviour {
 
         currentHealth -= amount;
 
+        playerAudio.Play ();
+
         //hitParticles.transform.position = hitPoint;
         //hitParticles.Play();
 
@@ -55,7 +61,10 @@ public class AlienOneHealth : MonoBehaviour {
     {
         isDead = true;
 
-                alienShooting.DisableEffects();
+        alienShooting.DisableEffects();
+
+        playerAudio.clip = deathClip;
+        playerAudio.Play ();
 
         capsuleCollider.isTrigger = true;
 
