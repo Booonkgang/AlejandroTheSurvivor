@@ -8,8 +8,10 @@ public class PlayerHealth : MonoBehaviour {
 		public int startingHealth = 50;
     public int currentHealth;
     public Slider healthSlider;
+		public AudioClip deathClip;
 
     Animator anim;
+		AudioSource playerAudio;
     RootMotionPlayerMovement rootMotionPlayerMovement;
     PlayerShooting playerShooting;
 		ParticleSystem hitParticles;
@@ -23,6 +25,8 @@ public class PlayerHealth : MonoBehaviour {
         anim = GetComponent <Animator> ();
         rootMotionPlayerMovement = GetComponent <RootMotionPlayerMovement> ();
         playerShooting = GetComponentInChildren <PlayerShooting> ();
+
+				playerAudio = GetComponent <AudioSource> ();
 
 				hitParticles = GetComponentInChildren <ParticleSystem> ();
 				capsuleCollider = GetComponent <CapsuleCollider> ();
@@ -43,6 +47,8 @@ public class PlayerHealth : MonoBehaviour {
 
 				currentHealth -= amount;
 
+				playerAudio.Play ();
+
 				//healthSlider.value = currentHealth;
 
 //				hitParticles.transform.position = hitPoint;
@@ -62,6 +68,9 @@ public class PlayerHealth : MonoBehaviour {
         playerShooting.DisableEffects ();
 
         anim.SetTrigger ("Die");
+
+				playerAudio.clip = deathClip;
+				playerAudio.Play ();
 
 
         rootMotionPlayerMovement.enabled = false;
