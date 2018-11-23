@@ -21,6 +21,9 @@ public class ShipPartTrigger : MonoBehaviour {
             ct.triggerPart();
             anim.SetBool("hasCollider", true);
             lightSource.enabled = true;
+            if(transform.parent != null){
+                transform.parent.tag = "Untagged";
+            }
         }
     }
 
