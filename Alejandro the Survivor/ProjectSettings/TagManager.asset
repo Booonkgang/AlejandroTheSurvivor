@@ -9,6 +9,8 @@ TagManager:
   - PowerUpManager
   - Absinthe
   - ShipPart
+  - AstronautPlayer
+  - Alien
   layers:
   - Default
   - TransparentFX

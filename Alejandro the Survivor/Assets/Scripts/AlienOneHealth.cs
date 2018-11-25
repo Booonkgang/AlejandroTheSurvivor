@@ -12,6 +12,13 @@ public class AlienOneHealth : MonoBehaviour {
     ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
         AlienShooting alienShooting;
+    public AudioClip deathClip;
+
+    Animator anim;
+    AudioSource playerAudio;
+    ParticleSystem hitParticles;
+    CapsuleCollider capsuleCollider;
+    AlienShooting alienShooting;
     bool isDead;
 
 
@@ -25,6 +32,9 @@ public class AlienOneHealth : MonoBehaviour {
         capsuleCollider = GetComponent <CapsuleCollider> ();
 
                 alienShooting = GetComponentInChildren <AlienShooting> ();
+        playerAudio = GetComponent <AudioSource> ();
+
+        alienShooting = GetComponentInChildren <AlienShooting> ();
 
         currentHealth = startingHealth;
     }
@@ -43,6 +53,8 @@ public class AlienOneHealth : MonoBehaviour {
 
 
         currentHealth -= amount;
+
+        playerAudio.Play ();
 
         //hitParticles.transform.position = hitPoint;
         //hitParticles.Play();
@@ -63,6 +75,14 @@ public class AlienOneHealth : MonoBehaviour {
             powerUpManager.spawnPowerUp(this.transform.position);
         }
         capsuleCollider.isTrigger = true;
+
+        alienShooting.DisableEffects();
+
+        playerAudio.clip = deathClip;
+        playerAudio.Play ();
+
+        capsuleCollider.isTrigger = true;
+
         anim.SetTrigger ("Die");
         StartSinking();
     }
