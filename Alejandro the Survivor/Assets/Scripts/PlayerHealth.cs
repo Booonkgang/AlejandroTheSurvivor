@@ -13,11 +13,8 @@ public class PlayerHealth : MonoBehaviour {
 
     Animator anim;
 		public int startingHealth = 50;
-    public int currentHealth;
-    public Slider healthSlider;
 		public AudioClip deathClip;
 
-    Animator anim;
 		AudioSource playerAudio;
     RootMotionPlayerMovement rootMotionPlayerMovement;
     PlayerShooting playerShooting;
@@ -35,7 +32,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	    hitParticles = GetComponentInChildren <ParticleSystem> ();
 		capsuleCollider = GetComponent <CapsuleCollider> ();
-        
+
         currentHealth = maxHealth;
 				playerAudio = GetComponent <AudioSource> ();
 

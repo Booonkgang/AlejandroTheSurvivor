@@ -98,10 +98,7 @@ GameObject:
   - component: {fileID: 199477038690757932}
   - component: {fileID: 120989166256295184}
   - component: {fileID: 114724532726218584}
-  - component: {fileID: 114102874993346856}
-  - component: {fileID: 198915267499877054}
-  - component: {fileID: 199477038690757932}
-  - component: {fileID: 120989166256295184}
+  - component: {fileID: 114381471021717088}
   m_Layer: 17
   m_Name: GunEnd
   m_TagString: Untagged
@@ -758,12 +755,8 @@ GameObject:
   - component: {fileID: 114116125417607626}
   - component: {fileID: 114597816611877988}
   - component: {fileID: 4807795057494504}
-  - component: {fileID: 95760554513567918}
-  - component: {fileID: 54024778089198764}
-  - component: {fileID: 136401760811712636}
-  - component: {fileID: 114381471021717088}
-  - component: {fileID: 195281693410351610}
   - component: {fileID: 114151337304475570}
+  - component: {fileID: 114102874993346856}
   m_Layer: 17
   m_Name: ShootingAlien
   m_TagString: Alien
@@ -1075,7 +1068,6 @@ Transform:
   - {fileID: 4791742177442370}
   - {fileID: 4061126436131464}
   m_Father: {fileID: 224779711995748758}
-  m_Father: {fileID: 4807795057494504}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4182120027400796
@@ -1201,7 +1193,6 @@ Transform:
   m_LocalScale: {x: 0.011783254, y: 0.011783254, z: 0.011783254}
   m_Children: []
   m_Father: {fileID: 224779711995748758}
-  m_Father: {fileID: 4807795057494504}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4270940327709672
@@ -1477,7 +1468,6 @@ Transform:
   m_LocalScale: {x: 0.0254, y: 0.0254, z: 0.0254}
   m_Children: []
   m_Father: {fileID: 224779711995748758}
-  m_Father: {fileID: 4807795057494504}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4627574508131124
@@ -1650,11 +1640,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.5056423, z: 0, w: 0.86274326}
   m_LocalPosition: {x: 2.13, y: 0.066, z: 0.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4619431020172844}
-  - {fileID: 4258788926100714}
-  - {fileID: 4153980485699346}
-  - {fileID: 4932822786602084}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1761,7 +1747,6 @@ Transform:
   m_LocalScale: {x: 0.0254, y: 0.0254, z: 0.0254}
   m_Children: []
   m_Father: {fileID: 224779711995748758}
-  m_Father: {fileID: 4807795057494504}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4948791510563716
@@ -1855,10 +1840,9 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114116125417607626
 --- !u!114 &114102874993346856
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1852123560111392}
@@ -1867,17 +1851,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafa76f641808ba46a51d39606b7a8f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114597816611877988
-  m_GameObject: {fileID: 1086275834881634}
+--- !u!114 &114116125417607626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1852123560111392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98fc4b5809d30f44a87d41cc509232cf, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerShot: 5
-  timeBetweenBullets: 1.5
-  range: 100
-  alien_obj: {fileID: 1852123560111392}
 --- !u!114 &114151337304475570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1891,10 +1875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 20
   currentHealth: 0
---- !u!114 &114724532726218584
-  m_Script: {fileID: 11500000, guid: 4ac8dc61cd4b9634a92f1694ba26705c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  deathClip: {fileID: 0}
 --- !u!114 &114381471021717088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1910,14 +1891,28 @@ MonoBehaviour:
   timeBetweenBullets: 1
   range: 35
   alien_obj: {fileID: 1852123560111392}
+--- !u!114 &114597816611877988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1852123560111392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c37cb9ddedd1ca4294c88ac8f245cc7, type: 3}
+  m_Script: {fileID: 11500000, guid: 98fc4b5809d30f44a87d41cc509232cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 50
-  currentHealth: 0
+--- !u!114 &114724532726218584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1086275834881634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac8dc61cd4b9634a92f1694ba26705c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!120 &120989166256295184
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -5595,9 +5590,6 @@ ParticleSystem:
     enabled: 1
     serializedVersion: 3
     type: 1
-    enabled: 0
-    serializedVersion: 3
-    type: 0
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0

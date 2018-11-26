@@ -11,14 +11,11 @@ public class AlienOneHealth : MonoBehaviour {
     Animator anim;
     ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
-        AlienShooting alienShooting;
+    AlienShooting alienShooting;
     public AudioClip deathClip;
 
-    Animator anim;
     AudioSource playerAudio;
-    ParticleSystem hitParticles;
-    CapsuleCollider capsuleCollider;
-    AlienShooting alienShooting;
+    
     bool isDead;
 
 
