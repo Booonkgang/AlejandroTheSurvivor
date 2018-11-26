@@ -10,15 +10,13 @@ public class PlayerHealth : MonoBehaviour {
     public float gainBooster = 1f;
     public Slider healthSlider;
     public Text healthText;
+    public AudioClip deathClip;
 
     Animator anim;
-		public int startingHealth = 50;
-		public AudioClip deathClip;
-
-		AudioSource playerAudio;
+    AudioSource playerAudio;
     RootMotionPlayerMovement rootMotionPlayerMovement;
     PlayerShooting playerShooting;
-		ParticleSystem hitParticles;
+	ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
     bool isDead;
     bool damaged;
@@ -30,16 +28,11 @@ public class PlayerHealth : MonoBehaviour {
         rootMotionPlayerMovement = GetComponent <RootMotionPlayerMovement> ();
         playerShooting = GetComponentInChildren <PlayerShooting> ();
 
+        playerAudio = GetComponent<AudioSource>();
 	    hitParticles = GetComponentInChildren <ParticleSystem> ();
 		capsuleCollider = GetComponent <CapsuleCollider> ();
 
         currentHealth = maxHealth;
-				playerAudio = GetComponent <AudioSource> ();
-
-				hitParticles = GetComponentInChildren <ParticleSystem> ();
-				capsuleCollider = GetComponent <CapsuleCollider> ();
-
-        currentHealth = startingHealth;
     }
 
 
@@ -56,6 +49,7 @@ public class PlayerHealth : MonoBehaviour {
             damaged = true;
 
             currentHealth -= amount;
+            playerAudio.Play();
 
             healthSlider.value = currentHealth;
             healthText.text = "" + currentHealth;
@@ -90,21 +84,6 @@ public class PlayerHealth : MonoBehaviour {
         currentHealth += amount;
         healthSlider.value = currentHealth;
         healthText.text = "" + currentHealth;
-        damaged = true;
-
-				currentHealth -= amount;
-
-				playerAudio.Play ();
-
-				//healthSlider.value = currentHealth;
-
-//				hitParticles.transform.position = hitPoint;
-//				hitParticles.Play();
-
-				if(currentHealth <= 0)
-				{
-						Death ();
-				}
     }
 
 
@@ -115,9 +94,8 @@ public class PlayerHealth : MonoBehaviour {
         playerShooting.DisableEffects ();
 
         anim.SetTrigger ("Die");
-
-				playerAudio.clip = deathClip;
-				playerAudio.Play ();
+        playerAudio.clip = deathClip;
+        playerAudio.Play();
 
 
         rootMotionPlayerMovement.enabled = false;

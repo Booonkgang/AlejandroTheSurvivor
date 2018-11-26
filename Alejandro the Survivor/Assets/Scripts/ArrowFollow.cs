@@ -25,7 +25,7 @@ public class ArrowFollow : MonoBehaviour {
 				closestPart = part;
 			}
 		}
-		Debug.Log(closestPart.name);
+		//Debug.Log(closestPart.name);
 		transform.LookAt(closestPart.transform);
 		transform.Rotate(-90,90,0);
 	}

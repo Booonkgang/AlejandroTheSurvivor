@@ -6,16 +6,14 @@ public class AlienOneHealth : MonoBehaviour {
 
     public int startingHealth = 20;
     public int currentHealth;
+    public AudioClip deathClip;
 
     PowerUpManager powerUpManager;
+    AudioSource playerAudio;
     Animator anim;
     ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
     AlienShooting alienShooting;
-    public AudioClip deathClip;
-
-    AudioSource playerAudio;
-    
     bool isDead;
 
 
@@ -28,10 +26,9 @@ public class AlienOneHealth : MonoBehaviour {
         hitParticles = GetComponentInChildren <ParticleSystem> ();
         capsuleCollider = GetComponent <CapsuleCollider> ();
 
-                alienShooting = GetComponentInChildren <AlienShooting> ();
-        playerAudio = GetComponent <AudioSource> ();
-
         alienShooting = GetComponentInChildren <AlienShooting> ();
+        playerAudio = GetComponent<AudioSource>();
+        alienShooting = GetComponentInChildren<AlienShooting>();
 
         currentHealth = startingHealth;
     }
@@ -51,8 +48,7 @@ public class AlienOneHealth : MonoBehaviour {
 
         currentHealth -= amount;
 
-        playerAudio.Play ();
-
+        playerAudio.Play();
         //hitParticles.transform.position = hitPoint;
         //hitParticles.Play();
 
@@ -67,19 +63,13 @@ public class AlienOneHealth : MonoBehaviour {
     {
         isDead = true;
         alienShooting.DisableEffects();
+        playerAudio.clip = deathClip;
+        playerAudio.Play();
         if (Random.value > (1 - powerUpManager.spawnChance))
         {
             powerUpManager.spawnPowerUp(this.transform.position);
         }
         capsuleCollider.isTrigger = true;
-
-        alienShooting.DisableEffects();
-
-        playerAudio.clip = deathClip;
-        playerAudio.Play ();
-
-        capsuleCollider.isTrigger = true;
-
         anim.SetTrigger ("Die");
         StartSinking();
     }

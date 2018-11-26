@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ShortAlienHealth : MonoBehaviour {
 
-	
-		public int startingHealth = 50;
+	public int startingHealth = 50;
     public int currentHealth;
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 10;
-		public AudioClip deathClip;
+    public AudioClip deathClip;
 
     Animator anim;
     private bool isDead;
@@ -18,7 +17,7 @@ public class ShortAlienHealth : MonoBehaviour {
     BoxCollider boxCollider;
     GameObject astronautPlayer;
     PowerUpManager powerUpManager;
-		AudioSource playerAudio;
+    AudioSource playerAudio;
     bool playerInRange;
     float timer;
 
@@ -32,8 +31,7 @@ public class ShortAlienHealth : MonoBehaviour {
         capsuleCollider = GetComponent <CapsuleCollider> ();
         boxCollider = GetComponent<BoxCollider>();
         astronautPlayer = GameObject.FindGameObjectWithTag ("AstronautPlayer");
-
-				playerAudio = GetComponent <AudioSource> ();
+        playerAudio = GetComponent<AudioSource>();
 		//		alienShooting = GetComponentInChildren <AlienShooting> ();
 
         currentHealth = startingHealth;
@@ -73,8 +71,7 @@ public class ShortAlienHealth : MonoBehaviour {
 
 
         currentHealth -= amount;
-
-				playerAudio.Play ();
+        playerAudio.Play();
 
         //hitParticles.transform.position = hitPoint;
         //hitParticles.Play();
@@ -101,17 +98,12 @@ public class ShortAlienHealth : MonoBehaviour {
         //alienShooting.DisableEffects();
 
         isDead = true;
+        playerAudio.clip = deathClip;
+        playerAudio.Play();
         if (Random.value > (1 - powerUpManager.spawnChance))
         {
             powerUpManager.spawnPowerUp(this.transform.position);
         }
-        isDead = true;
-
-		//alienShooting.DisableEffects();
-
-				playerAudio.clip = deathClip;
-				playerAudio.Play ();
-
         capsuleCollider.isTrigger = true;
 
         anim.SetTrigger ("Dead");
