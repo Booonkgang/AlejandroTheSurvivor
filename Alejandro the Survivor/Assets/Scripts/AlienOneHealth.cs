@@ -7,6 +7,7 @@ public class AlienOneHealth : MonoBehaviour {
     public int startingHealth = 20;
     public int currentHealth;
     public AudioClip deathClip;
+    public GameObject impactParticle;
 
     PowerUpManager powerUpManager;
     AudioSource playerAudio;
@@ -49,10 +50,11 @@ public class AlienOneHealth : MonoBehaviour {
         currentHealth -= amount;
 
         playerAudio.Play();
+        impactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, hitPoint)) as GameObject;
         //hitParticles.transform.position = hitPoint;
         //hitParticles.Play();
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Death ();
         }
