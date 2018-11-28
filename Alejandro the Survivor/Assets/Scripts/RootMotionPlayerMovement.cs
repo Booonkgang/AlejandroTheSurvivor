@@ -105,4 +105,10 @@ public class RootMotionPlayerMovement : MonoBehaviour
         
       
     }
+
+    public void GainSpeed(float multiplier)
+    {
+        animationSpeed *= (1.0f + multiplier);
+        rootMovementSpeed *= (1.0f + multiplier);
+    }
 }
