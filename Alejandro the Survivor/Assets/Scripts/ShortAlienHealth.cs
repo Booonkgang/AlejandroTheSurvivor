@@ -73,8 +73,8 @@ public class ShortAlienHealth : MonoBehaviour {
 
         currentHealth -= amount;
         playerAudio.Play();
-        impactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, hitPoint)) as GameObject;
-
+        GameObject cloneImpactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, hitPoint)) as GameObject;
+        Destroy (cloneImpactParticle, 1f);
         //hitParticles.transform.position = hitPoint;
         //hitParticles.Play();
 

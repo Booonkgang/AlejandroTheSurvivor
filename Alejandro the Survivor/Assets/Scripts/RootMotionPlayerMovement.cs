@@ -89,8 +89,10 @@ public class RootMotionPlayerMovement : MonoBehaviour
 
         newRootPosition = anim.rootPosition;
         newRootRotation = anim.rootRotation;
+        newRootPosition.y = 0.21f;
         
         this.transform.position = Vector3.LerpUnclamped(this.transform.position, newRootPosition, rootMovementSpeed);
+
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit floorHit;
         Quaternion newRotation;
