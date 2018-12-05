@@ -6,6 +6,8 @@ public class SpawnHealth : MonoBehaviour {
 
     public int startingHealth = 500;
     public int currentHealth;
+    public AudioClip[] deathSounds;
+    public AudioSource explode;
 
     bool isDestroyed;
 
@@ -13,6 +15,7 @@ public class SpawnHealth : MonoBehaviour {
     void Start()
     {
         currentHealth = startingHealth;
+        explode = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,7 @@ public class SpawnHealth : MonoBehaviour {
         }
 
         currentHealth -= amount;
+        explode.Play();
         if (currentHealth <= 0)
         {
             Death();
@@ -37,7 +41,9 @@ public class SpawnHealth : MonoBehaviour {
 
     public void Death()
     {
+        explode.clip = deathSounds[Random.Range(0, deathSounds.Length)];
+        explode.Play();
         isDestroyed = true;
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 1f);
     }
 }
