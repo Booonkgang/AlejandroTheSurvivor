@@ -80,7 +80,8 @@ public class HUDControl : MonoBehaviour {
 				currTimer += Time.unscaledDeltaTime;
 
 				if (currTimer >= restart) {
-                    SceneManager.LoadScene ("GameMenuScene");
+                    SceneSelect(SceneManager.GetActiveScene().name);
+                    //SceneManager.LoadScene ("GameMenuScene");
 				}
 			}
 		}
@@ -89,14 +90,15 @@ public class HUDControl : MonoBehaviour {
 
 	// Switch between different scene for future use
 	private void SceneSelect(string sceneName){
-		if (sceneName == "Level1") {
-			SceneManager.LoadScene ("Level2");
-		} else if (sceneName == "Level2") {
-			SceneManager.LoadScene ("Level3");
-		} else if (sceneName == "Level3") {
-			//SceneManager.LoadScene ("Level1");
-			Application.Quit();
-		} else {
+		if (sceneName == "MarsLevel1") {
+			SceneManager.LoadScene ("MarsLevel2");
+		} else if (sceneName == "MarsLevel2") {
+			SceneManager.LoadScene ("MarsLevel3");
+		} else if (sceneName == "MarsLevel3") {
+			SceneManager.LoadScene ("MarsLevel4");
+		} else if (sceneName == "MarsLevel4") {
+            SceneManager.LoadScene("GameMenuScene");
+        } else {
 			
 		}
 	}

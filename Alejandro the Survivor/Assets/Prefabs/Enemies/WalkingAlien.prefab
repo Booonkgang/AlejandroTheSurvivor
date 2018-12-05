@@ -1692,10 +1692,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefa5ee648fa5d5478d816c2284f7c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 50
+  startingHealth: 20
   currentHealth: 0
   timeBetweenAttacks: 0.5
-  attackDamage: 10
+  attackDamage: 2
   deathClip: {fileID: 8300000, guid: 3042f318b7a41459cba7446057bfd53c, type: 3}
   impactParticle: {fileID: 1603743825850918, guid: ab585218777ec8d40950f7e5d60cb7d6,
     type: 2}
