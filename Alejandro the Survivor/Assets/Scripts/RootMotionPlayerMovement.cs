@@ -70,9 +70,8 @@ public class RootMotionPlayerMovement : MonoBehaviour
             playerToMouse.y = 0f;
             newRotation = Quaternion.LookRotation(playerToMouse);
 
-            anim.SetFloat("velx", newRotation.w / 2);
-        } else
-        {
+            anim.SetFloat("velx", newRotation.w / 4 + inputTurn);
+        } else {
             anim.SetFloat("velx", inputTurn);
         }
         

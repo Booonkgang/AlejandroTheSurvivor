@@ -8002,6 +8002,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1469552238671186, guid: 2bd413b982191d54396bb381188bb4d0, type: 2}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bd413b982191d54396bb381188bb4d0, type: 2}
   m_IsPrefabAsset: 0
@@ -8222,7 +8226,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617044122}
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 53.361, y: 1.992, z: 1.406}
+  m_LocalPosition: {x: -0.52, y: 2.21, z: -3.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9594,15 +9598,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4835437615680990, guid: 889701516fb95c94883f301a5601d7d9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 53.57
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4835437615680990, guid: 889701516fb95c94883f301a5601d7d9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4835437615680990, guid: 889701516fb95c94883f301a5601d7d9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 6.85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4835437615680990, guid: 889701516fb95c94883f301a5601d7d9, type: 2}
       propertyPath: m_LocalRotation.x
@@ -9643,6 +9647,11 @@ Prefab:
       propertyPath: deathClip
       value: 
       objectReference: {fileID: 8300000, guid: 8b45169ea569e434d9886ce321c7df6b, type: 3}
+    - target: {fileID: 54344153475785160, guid: 889701516fb95c94883f301a5601d7d9,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 889701516fb95c94883f301a5601d7d9, type: 2}
   m_IsPrefabAsset: 0
