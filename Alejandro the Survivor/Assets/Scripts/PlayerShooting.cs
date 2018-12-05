@@ -89,6 +89,12 @@ public class PlayerShooting : MonoBehaviour {
                     {
                         logHealth.TakeDamage(damagePerShot, shootHit.point);
                     }
+
+                    SpawnHealth spawnHealth = shootHit.collider.GetComponent<SpawnHealth>();
+                    if (spawnHealth != null)
+                    {
+                        spawnHealth.TakeDamage(damagePerShot, shootHit.point);
+                    }
             gunLine.SetPosition (1, shootHit.point);
 			}
 			else

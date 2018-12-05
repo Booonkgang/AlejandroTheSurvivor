@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LogHealth : MonoBehaviour {
+public class SpawnHealth : MonoBehaviour {
 
-    public int startingHealth = 30;
+    public int startingHealth = 500;
     public int currentHealth;
 
     bool isDestroyed;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         currentHealth = startingHealth;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-    public void TakeDamage (int amount, Vector3 hitPoint)
+    public void TakeDamage(int amount, Vector3 hitPoint)
     {
         if (isDestroyed)
         {
