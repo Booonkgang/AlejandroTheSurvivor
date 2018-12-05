@@ -38,7 +38,7 @@ public class AlienShooting : MonoBehaviour {
 
 	void Update ()
 	{
-			
+
 
 			timer += Time.deltaTime;
 

@@ -937,7 +937,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 259747267}
-  - component: {fileID: 259747266}
   - component: {fileID: 259747268}
   m_Layer: 0
   m_Name: EnemySpawnManager
@@ -946,23 +945,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &259747266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 259747265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0789ab2b3fdac0f4989cd891a42c01a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 1677522826215784, guid: 993d1391c22c39f41b292a532ea396a5, type: 2}
-  spawnTime: 8
-  spawnPoints:
-  - {fileID: 822746194}
-  - {fileID: 541932868}
-  - {fileID: 1387463029}
 --- !u!4 &259747267
 Transform:
   m_ObjectHideFlags: 0
@@ -988,9 +970,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1852123560111392, guid: 55607f4755125f84bb5339f61d632903, type: 2}
-  spawnTime: 12
+  spawnTime: 8
   spawnPoints:
   - {fileID: 541932868}
+  - {fileID: 1387463029}
+  - {fileID: 58076374}
+  - {fileID: 822746194}
 --- !u!1 &276332727
 GameObject:
   m_ObjectHideFlags: 0

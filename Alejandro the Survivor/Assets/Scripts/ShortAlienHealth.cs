@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ShortAlienHealth : MonoBehaviour {
 
-	public int startingHealth = 50;
+	public int startingHealth = 15;
     public int currentHealth;
     public float timeBetweenAttacks = 0.5f;
-    public int attackDamage = 10;
+    public int attackDamage = 2;
     public AudioClip deathClip;
     public GameObject impactParticle;
 

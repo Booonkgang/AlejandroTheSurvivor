@@ -582,6 +582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 2000
   currentHealth: 0
+  deathSounds: []
+  explode: {fileID: 0}
 --- !u!64 &154911347
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1113,6 +1115,8 @@ MonoBehaviour:
   enemy: {fileID: 1852123560111392, guid: 55607f4755125f84bb5339f61d632903, type: 2}
   spawnTime: 12
   spawnPoints:
+  - {fileID: 1323967547}
+  - {fileID: 859579729}
   - {fileID: 154911348}
 --- !u!1 &276332727
 GameObject:
@@ -1970,6 +1974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 30
   currentHealth: 0
+  deathSounds: []
+  explode: {fileID: 0}
 --- !u!64 &623695447
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2859,6 +2865,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 500
   currentHealth: 0
+  deathSounds: []
+  explode: {fileID: 0}
 --- !u!64 &859579732
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4431,6 +4439,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 500
   currentHealth: 0
+  deathSounds: []
+  explode: {fileID: 0}
 --- !u!64 &1323967546
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4620,6 +4630,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 500
   currentHealth: 0
+  deathSounds: []
+  explode: {fileID: 0}
 --- !u!64 &1376598381
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4732,6 +4744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 30
   currentHealth: 0
+  deathSounds: []
+  explode: {fileID: 0}
 --- !u!64 &1379224919
 MeshCollider:
   m_ObjectHideFlags: 0
