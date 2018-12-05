@@ -70,9 +70,8 @@ public class RootMotionPlayerMovement : MonoBehaviour
             playerToMouse.y = 0f;
             newRotation = Quaternion.LookRotation(playerToMouse);
 
-            anim.SetFloat("velx", newRotation.w / 2);
-        } else
-        {
+            anim.SetFloat("velx", newRotation.w / 4 + inputTurn);
+        } else {
             anim.SetFloat("velx", inputTurn);
         }
         
@@ -89,8 +88,10 @@ public class RootMotionPlayerMovement : MonoBehaviour
 
         newRootPosition = anim.rootPosition;
         newRootRotation = anim.rootRotation;
+        newRootPosition.y = 0.21f;
         
         this.transform.position = Vector3.LerpUnclamped(this.transform.position, newRootPosition, rootMovementSpeed);
+
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit floorHit;
         Quaternion newRotation;
@@ -104,5 +105,11 @@ public class RootMotionPlayerMovement : MonoBehaviour
         }
         
       
+    }
+
+    public void GainSpeed(float multiplier)
+    {
+        animationSpeed *= (1.0f + multiplier);
+        rootMovementSpeed *= (1.0f + multiplier);
     }
 }

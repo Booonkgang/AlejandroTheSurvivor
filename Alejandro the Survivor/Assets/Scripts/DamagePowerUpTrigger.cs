@@ -9,10 +9,12 @@ public class DamagePowerUpTrigger : MonoBehaviour
     public int damage = 5;
     public float fireRate;
     public float range;
+    AudioSource getPotion;
 
     private void Start()
     {
         boxCollider = gameObject.GetComponent<BoxCollider>();
+        getPotion = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,9 +22,11 @@ public class DamagePowerUpTrigger : MonoBehaviour
         PlayerShooting playerShooting = other.attachedRigidbody.gameObject.GetComponentInChildren<PlayerShooting>();
         if (playerShooting != null)
         {
+            getPotion.Play();
+
             playerShooting.powerUp(damage, fireRate, range);
             boxCollider.enabled = false;
-            Destroy(gameObject, 0.3f);
+            Destroy(gameObject, 0.7f);
         }
     }
 }

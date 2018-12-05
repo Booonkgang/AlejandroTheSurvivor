@@ -83,7 +83,13 @@ public class PlayerShooting : MonoBehaviour {
 					{
 						shortHealth.TakeDamage(damagePerShot, shootHit.point);
 					}
-					gunLine.SetPosition (1, shootHit.point);
+
+                    LogHealth logHealth = shootHit.collider.GetComponent<LogHealth>();
+                    if (logHealth != null)
+                    {
+                        logHealth.TakeDamage(damagePerShot, shootHit.point);
+                    }
+            gunLine.SetPosition (1, shootHit.point);
 			}
 			else
 			{

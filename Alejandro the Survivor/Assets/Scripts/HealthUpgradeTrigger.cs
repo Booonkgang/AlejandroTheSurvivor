@@ -6,10 +6,12 @@ public class HealthUpgradeTrigger : MonoBehaviour {
 
     BoxCollider boxCollider;
     public int healthGain = 25;
+    AudioSource getPotion;
 
     private void Start()
     {
         boxCollider = gameObject.GetComponent<BoxCollider>();
+        getPotion = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -22,9 +24,10 @@ public class HealthUpgradeTrigger : MonoBehaviour {
         PlayerHealth ct = other.attachedRigidbody.gameObject.GetComponent<PlayerHealth>();
         if (ct != null)
         {
+            getPotion.Play();
             ct.IncreaseMaxHealth(healthGain);
             boxCollider.enabled = false;
-            Destroy(gameObject, 0.3f);
+            Destroy(gameObject, 0.7f);
         }
     }
 }

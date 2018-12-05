@@ -9,6 +9,7 @@ public class ShortAlienHealth : MonoBehaviour {
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 10;
     public AudioClip deathClip;
+    public GameObject impactParticle;
 
     Animator anim;
     private bool isDead;
@@ -72,11 +73,12 @@ public class ShortAlienHealth : MonoBehaviour {
 
         currentHealth -= amount;
         playerAudio.Play();
-
+        GameObject cloneImpactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, hitPoint)) as GameObject;
+        Destroy (cloneImpactParticle, 1f);
         //hitParticles.transform.position = hitPoint;
         //hitParticles.Play();
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Death ();
         }
