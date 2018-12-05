@@ -95,6 +95,8 @@ public class HUDControl : MonoBehaviour {
 		} else if (sceneName == "MarsLevel2") {
 			SceneManager.LoadScene ("MarsLevel3");
 		} else if (sceneName == "MarsLevel3") {
+			SceneManager.LoadScene ("MarsLevel4");
+		} else if (sceneName == "MarsLevel4") {
             SceneManager.LoadScene("GameMenuScene");
         } else {
 			
