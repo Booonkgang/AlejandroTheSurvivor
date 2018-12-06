@@ -27,13 +27,35 @@ public class GameStarter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (startFlag && !text1Flag)
+        //{
+        //    currTimer += Time.unscaledDeltaTime;
+        //    if (currTimer >= restart)
+        //    {
+        //        text1Flag = true;
+        //        currTimer = 0.0f;
+        //    }
+        //}
+        //if (text1Flag)
+        //{
+        //    var temp = Text1.color;
+        //    temp.a = 0.0f;
+        //    Text1.color = temp;
+        //    temp.a = 1.0f;
+        //    Text2.color = temp;
+        //    currTimer += Time.unscaledDeltaTime;
+        //    if (currTimer >= restart)
+        //    {
+        //        SceneManager.LoadScene("MarsLevel1");
+        //    }
+        //}
         if (startFlag && !text1Flag)
         {
-            currTimer += Time.unscaledDeltaTime;
-            if (currTimer >= restart)
+            //currTimer += Time.unscaledDeltaTime;
+            if (Input.GetKeyDown("space"))
             {
                 text1Flag = true;
-                currTimer = 0.0f;
+                //currTimer = 0.0f;
             }
         }
         if (text1Flag)
@@ -43,8 +65,8 @@ public class GameStarter : MonoBehaviour
             Text1.color = temp;
             temp.a = 1.0f;
             Text2.color = temp;
-            currTimer += Time.unscaledDeltaTime;
-            if (currTimer >= restart)
+            //currTimer += Time.unscaledDeltaTime;
+            if (Input.GetKeyDown("space"))
             {
                 SceneManager.LoadScene("MarsLevel1");
             }

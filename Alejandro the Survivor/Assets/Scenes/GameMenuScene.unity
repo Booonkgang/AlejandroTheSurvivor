@@ -1544,10 +1544,11 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "You can control Alejandro\u2019s movements by either using the arrow keys
-    or the AWSD keys. \nTo shoot you can use the spacebar or the click button. \nThere
-    are also power ups throughout the game to help you boost Alejandro\u2019s health.
-    \nYou can use the Esc button to pull up the game menu at anytime during the game.\n\nGood
-    Luck! "
+    or the AWSD keys. \nTo rotate you can use the mouse or the AWSD/arrow keys and
+    to shoot you can use the spacebar or the click button. \nThere are also power
+    ups throughout the game to help you boost Alejandro\u2019s health. \nYou can use
+    the Esc button to pull up the game menu at anytime during the game.\n\nGood Luck!
+    \n"
 --- !u!222 &323253482
 CanvasRenderer:
   m_ObjectHideFlags: 0
