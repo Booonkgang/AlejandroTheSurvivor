@@ -25,7 +25,7 @@ public class LogDetection : MonoBehaviour {
         if (ct != null)
         {
             logTrigger = true;
-            anim.SetBool("MoveTrigger", true);
+            anim.SetBool("Moved", true);
 
         }
     }
