@@ -1062,7 +1062,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: Level Start!
+  m_Text: Level Two is Starting!
 --- !u!222 &276332731
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7391,7 +7391,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: Congratulations!
+  m_Text: "Congratulations! \nYou are moving to the next level!"
 --- !u!222 &1955204032
 CanvasRenderer:
   m_ObjectHideFlags: 0

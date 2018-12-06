@@ -52,7 +52,7 @@ public class GameStarter : MonoBehaviour
         if (startFlag && !text1Flag)
         {
             //currTimer += Time.unscaledDeltaTime;
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyUp("space"))
             {
                 text1Flag = true;
                 //currTimer = 0.0f;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1533,7 +1533,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
@@ -1543,12 +1543,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You can control Alejandro\u2019s movements by either using the arrow keys
-    or the AWSD keys. \nTo rotate you can use the mouse or the AWSD/arrow keys and
-    to shoot you can use the spacebar or the click button. \nThere are also power
-    ups throughout the game to help you boost Alejandro\u2019s health. \nYou can use
-    the Esc button to pull up the game menu at anytime during the game.\n\nGood Luck!
-    \n"
+  m_Text: "You can control Alejandro\u2019s movements by either using the up/down
+    arrow keys or the W/S keys. \nTo rotate you can use the mouse and to shoot you
+    can either use the spacebar or the click button. \nThere are also power ups throughout
+    the game to help you boost Alejandro\u2019s health. \nYou can use the Esc button
+    to pull up the game menu at anytime during the game.\n\nHint: The arrow on top
+    of Alejandro indicates where the next spaceship part is\n\nGood Luck! \n"
 --- !u!222 &323253482
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3075,7 +3075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9150943, g: 0.6903094, b: 0.3927999, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4004,7 +4004,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
@@ -4017,11 +4017,11 @@ MonoBehaviour:
   m_Text: "Welcome To Alejandro The Survivor\n\nAlejandro and his partner Jose are
     spanish astronauts, and they were on a  mission to explore Mars. \nHowever, due
     to unexpected failure of the spaceship, they crashed on the planet \u201CAkuro\u201D.
-    \nUnfortunately, Jose did survive the crash but Alejandro has managed to survive.
+    \nUnfortunately, Jose did not survive the crash but Alejandro has managed to survive.
     \nThe only way for Alejandro to get back to Earth is to fix the spaceship, but
-    the different parts of the spaceship are scattered around the planet and protected
-    by the \u201CAkurians\u201D! \nIn order to get the different parts back he has
-    to fight the aliens.  "
+    the different parts of the spaceship are scattered around the planet and are protected
+    by the \u201CAkurians\u201D! \nIn order to get the different parts back Alejandro
+    has to fight the aliens.  "
 --- !u!222 &988686381
 CanvasRenderer:
   m_ObjectHideFlags: 0

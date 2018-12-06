@@ -1690,7 +1690,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: Level Start!
+  m_Text: Level One is Starting!
 --- !u!222 &276332731
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2807,7 +2807,7 @@ RectTransform:
   m_Children:
   - {fileID: 850413184}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10668,8 +10668,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: "Congratulations! \nYou have helped Alejandro find the parts to the spaceship!\nNow
-    he's able to return back to Earth"
+  m_Text: "Congratulations! \nYou are moving to the next level!"
 --- !u!222 &1955204032
 CanvasRenderer:
   m_ObjectHideFlags: 0
