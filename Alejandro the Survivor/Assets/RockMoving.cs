@@ -28,20 +28,19 @@ public class RockMoving : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        RockTrigger ct = other.attachedRigidbody.gameObject.GetComponent<RockTrigger>();
-        if (ct != null)
+        if (other.attachedRigidbody.gameObject.GetComponent<PartTrigger>() != null)
         {
             rockTrigger = true;
             meshCollider.enabled = false;
             sphereCollider.enabled = false;
-            anim.SetBool("MoveTrigger", true);
+            anim.SetBool("Moved", true);
 
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        RockTrigger ct = other.attachedRigidbody.gameObject.GetComponent<RockTrigger>();
+        PartTrigger ct = other.attachedRigidbody.gameObject.GetComponent<PartTrigger>();
         if (ct != null)
         {
             rockTrigger = false;
