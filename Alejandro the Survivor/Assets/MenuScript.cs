@@ -11,7 +11,7 @@ public class MenuScript : MonoBehaviour {
 	void Start () {
         canvas = GetComponent<Canvas>();
         group = GetComponent<CanvasGroup>();
-        //Time.timeScale = 1f;
+        Time.timeScale = 1f;
 	}
 
     // Update is called once per frame

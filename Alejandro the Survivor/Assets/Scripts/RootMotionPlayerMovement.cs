@@ -51,7 +51,6 @@ public class RootMotionPlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-
         float inputForward = 0f;
         float inputTurn = 0f;
 
@@ -95,7 +94,7 @@ public class RootMotionPlayerMovement : MonoBehaviour
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit floorHit;
         Quaternion newRotation;
-        if (Physics.Raycast (camRay, out floorHit, camRayLength, floorMask))
+        if (Physics.Raycast (camRay, out floorHit, camRayLength, floorMask) && Time.timeScale == 1f)
         {
             Vector3 playerToMouse = floorHit.point - transform.position;
             playerToMouse.y = 0f;
