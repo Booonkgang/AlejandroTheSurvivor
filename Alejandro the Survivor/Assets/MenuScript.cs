@@ -25,8 +25,8 @@ public class MenuScript : MonoBehaviour {
         }
         else if (!isFading && Input.GetKeyUp(KeyCode.Escape) && group.alpha == 1f)
         {
-            group.alpha = 0f;
-            //StartCoroutine(FadeFromTo(1f, 0f));
+            //group.alpha = 0f;
+            StartCoroutine(FadeFromTo(1f, 0f));
             Time.timeScale = 1f;
         }
 
