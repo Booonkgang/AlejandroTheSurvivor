@@ -31,9 +31,9 @@ public class RockMoving : MonoBehaviour {
         if (other.attachedRigidbody.gameObject.GetComponent<PartTrigger>() != null)
         {
             rockTrigger = true;
+            anim.SetBool("Moved", true);
             meshCollider.enabled = false;
             sphereCollider.enabled = false;
-            anim.SetBool("Moved", true);
 
         }
     }

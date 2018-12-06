@@ -8,6 +8,7 @@ public class LogHealth : MonoBehaviour {
     public int currentHealth;
     public AudioClip[] deathSounds;
     public AudioSource explode;
+    private Material mat;
 
     bool isDestroyed;
 
@@ -16,12 +17,14 @@ public class LogHealth : MonoBehaviour {
     {
         currentHealth = startingHealth;
         explode = GetComponent<AudioSource>();
+        mat = gameObject.GetComponent<MeshRenderer>().material;
     }
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+
+    }
 
     public void TakeDamage (int amount, Vector3 hitPoint)
     {
@@ -40,9 +43,16 @@ public class LogHealth : MonoBehaviour {
 
     public void Death()
     {
+        isDestroyed = true;
+        while (mat.color.a > 0)
+        {
+            Color newColor = mat.color;
+            newColor.a -= Time.deltaTime;
+            mat.color = newColor;
+            gameObject.GetComponent<MeshRenderer>().material = mat;
+        }
+        Destroy(gameObject, 2f);
         explode.clip = deathSounds[Random.Range(0, deathSounds.Length)];
         explode.Play();
-        isDestroyed = true;
-        Destroy(gameObject, 2f);
     }
 }
