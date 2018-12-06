@@ -12,7 +12,7 @@ public class ResumeScript : MonoBehaviour {
     {
         canvas = GetComponentInParent<Canvas>();
         group = GetComponentInParent<CanvasGroup>();
-        //Time.timeScale = 1f;
+
     }
 	
 	// Update is called once per frame
@@ -21,8 +21,8 @@ public class ResumeScript : MonoBehaviour {
 	}
 
     public void resumeGame() {
-        print("resume");
         StartCoroutine(FadeFromTo(group.alpha, 0f));
+        Time.timeScale = 1f;
     }
 
     IEnumerator FadeFromTo(float from, float to)

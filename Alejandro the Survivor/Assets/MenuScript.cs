@@ -17,15 +17,19 @@ public class MenuScript : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if (isFading) return;
-        if (!isFading && Input.GetKeyUp(KeyCode.Escape) && group.alpha==0f) {
-            
-            StartCoroutine(FadeFromTo(group.alpha, 1f));
-            //Time.timeScale = 0f;
-        } else if(!isFading && Input.GetKeyUp(KeyCode.Escape) && group.alpha == 1f) {
-            
-            StartCoroutine(FadeFromTo(group.alpha, 0f));
-            //Time.timeScale = 1f;
+        if (!isFading && Input.GetKeyUp(KeyCode.Escape) && group.alpha == 0f)
+        {
+            //StartCoroutine(FadeFromTo(0f, 1f));
+            group.alpha = 1f;
+            Time.timeScale = 0f;
         }
+        else if (!isFading && Input.GetKeyUp(KeyCode.Escape) && group.alpha == 1f)
+        {
+            group.alpha = 0f;
+            //StartCoroutine(FadeFromTo(1f, 0f));
+            Time.timeScale = 1f;
+        }
+
 	}
 
     IEnumerator FadeFromTo(float from, float to) {

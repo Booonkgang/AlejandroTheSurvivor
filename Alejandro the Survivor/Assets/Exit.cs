@@ -15,6 +15,7 @@ public class Exit : MonoBehaviour {
 	}
 
     private void pressedExit() {
+        // WIll work in compiled one
         Application.Quit();
     }
 }
