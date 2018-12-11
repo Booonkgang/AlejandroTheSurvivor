@@ -1186,8 +1186,6 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 1323967547}
   - {fileID: 1376598378}
-  - {fileID: 859579729}
-  - {fileID: 154911348}
 --- !u!4 &259747267
 Transform:
   m_ObjectHideFlags: 0
@@ -1215,7 +1213,7 @@ MonoBehaviour:
   enemy: {fileID: 1852123560111392, guid: 55607f4755125f84bb5339f61d632903, type: 2}
   spawnTime: 12
   spawnPoints:
-  - {fileID: 1323967547}
+  - {fileID: 1376598378}
   - {fileID: 859579729}
   - {fileID: 154911348}
 --- !u!1 &276332727

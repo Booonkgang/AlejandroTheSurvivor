@@ -1031,8 +1031,6 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 1323967547}
   - {fileID: 1376598378}
-  - {fileID: 859579729}
-  - {fileID: 154911348}
 --- !u!4 &259747267
 Transform:
   m_ObjectHideFlags: 0
@@ -1061,7 +1059,7 @@ MonoBehaviour:
   spawnTime: 12
   spawnPoints:
   - {fileID: 154911348}
-  - {fileID: 1323967547}
+  - {fileID: 859579729}
 --- !u!1 &276332727
 GameObject:
   m_ObjectHideFlags: 0
