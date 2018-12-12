@@ -1545,11 +1545,12 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "You can control Alejandro\u2019s movements by either using the up/down
     arrow keys or the W/S keys. \nTo rotate you can use the mouse and to shoot you
-    can either use the spacebar or the click button. \nThere are also power ups throughout
-    the game to help you boost Alejandro\u2019s health. \nYou can use the Esc button
-    to pull up the game menu at anytime during the game.\n\nHint: The arrow on top
-    of Alejandro indicates the location of the next spaceship part\n\nGood Luck! \n\nPRESS
-    THE SPACE BAR TO PLAY\n"
+    can either use the spacebar or the click button. \nYou can also use the mouse
+    to aim while shooting.\nThere are also power ups throughout the game to help you
+    boost Alejandro\u2019s health. \nYou can use the Esc button to pull up the game
+    menu at anytime during the game.\n\nHint: The arrow on top of Alejandro indicates
+    the location of the next spaceship part\n\nGood Luck! \n\nPRESS THE SPACE BAR
+    TO PLAY\n"
 --- !u!222 &323253482
 CanvasRenderer:
   m_ObjectHideFlags: 0
