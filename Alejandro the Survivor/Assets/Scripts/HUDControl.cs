@@ -71,8 +71,7 @@ public class HUDControl : MonoBehaviour {
 			var temp = GameComplete.color;
 			temp.a = 1f;
 			GameComplete.color = temp;
-
-			delayTimer += Time.unscaledDeltaTime;
+            delayTimer += Time.unscaledDeltaTime;
 
 			if (delayTimer >= 1.0f) {
 				Time.timeScale = 0;
@@ -80,6 +79,7 @@ public class HUDControl : MonoBehaviour {
 				currTimer += Time.unscaledDeltaTime;
 
 				if (currTimer >= restart) {
+                    player.GetComponent<Animator>().SetInteger("parts", 0);
                     SceneSelect(SceneManager.GetActiveScene().name);
                     //SceneManager.LoadScene ("GameMenuScene");
 				}

@@ -6,11 +6,13 @@ public class ShipPartTrigger : MonoBehaviour {
 
     Animator anim;
     Light lightSource;
+    MeshCollider collider;
 
     private void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         lightSource = gameObject.GetComponentInChildren<Light>();
+        collider = gameObject.GetComponent<MeshCollider>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -18,8 +20,9 @@ public class ShipPartTrigger : MonoBehaviour {
         PartTrigger ct = other.attachedRigidbody.gameObject.GetComponent<PartTrigger>();
         if (ct != null)
         {
-            ct.triggerPart();
             anim.SetBool("hasCollider", true);
+            ct.triggerPart();
+            collider.enabled = false;
             lightSource.enabled = true;
             if(transform.parent != null){
                 transform.parent.tag = "Untagged";
