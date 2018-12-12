@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MarsLevel2.unity
     guid: f3130396459c10e4a9dc8d0201960d9b
+  - enabled: 1
+    path: Assets/Scenes/MarsLevel3.unity
+    guid: 6d66bc4818e9201488b66a8ad4cc1b63
+  - enabled: 1
+    path: Assets/Scenes/MarsLevel4.unity
+    guid: f3928ce57eae7ef4c90ca2cba853f1c3
   m_configObjects: {}
